@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script type="text/javascript">
+        // A constructor is a factory to make JavaScript objects.
+        // it is just a function that takes arguments and uses the JS keyword "this" to make the same thing over and over and over.
+        // the function name is capitalized to indicate it's a constructor
+        // this in JavaScript is th object (function or a constructor _) that you are currently inside of. It is the equivilant of self in Python
+        console.log(this) // this returns the window
+        function Player(name, position, amp, ap, ar, starter) {
+            this.name = name;
+            // you can run whatever you want, because we are just in a regular function
+            // console.log(2+2)
+            this.position = position;
+            this.avgMinutesPlayed = amp;
+            this.avgPoints = ap;
+            this.avgRebounds = ar;
+            this.starter = starter;
+            this.reportPPM = function() {
+                var ppm = this.avgPoints / this.avgMinutesPlayed;
+                ppm = Math.round(ppm * 100) / 100;
+                return ppm;
+            }
+        }
+        // Make the species property a shared property, now you don't make 10000 species strings
+        Player.prototype.species = "Human"
+
+        // when you instantiate an object from a constructor function, you use the keyword "new"
+        var player1 = new Player('Kent Bazemore', 'SF', 31.8, 12, 6.6, true)
+        console.log(player1);
+        // look up proto.  this is how javascript manages it's objects
+        // prototype means there is an attribute that all objects point to
+        // instead of created thousands of 'human' strings, you create one 'human' and all objects look to that __proto__ to know what it's attribute is at that points
+
+        // instead of point this.species up in the this fucntion do this
+        // Player.prototype.species = "Human"
+        // now all Player objects point to this ^
+
+        // class syntax 
+        class Player() {
+            constructor(props) {
+                super(props);
+                this.name = name;
+                this.position = position;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

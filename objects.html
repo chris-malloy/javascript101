@@ -1,0 +1,60 @@
+<script type="text/javascript">
+    // // An array is [] 
+    // var students = [];
+
+    // // an object is {}
+    // // this is an empty object!
+    // var student = {}
+
+    // // Just like dictionaries objects are combination of properties and values (keys and values)
+    // // syntax is:
+    // {
+    //     property:value;
+    // }
+
+    // student['name'] = "Hayes" // python way
+    // student.name = "Hayes";
+    // console.log(student);
+
+    // Unliek Puython, the property doesn;'t have to have "" around it
+    student = {
+        name: "Hayes"
+    }
+
+    student.age = 28;
+    console.log(student);
+
+    var student2 = {
+        name: 'Samantha',
+        friends: [];
+        sayHello: function(name) {
+            console.log(`Hello, ${name}`)
+            console.log("Hello, " + name)
+        },
+        addFriend: function(newFriendName) {
+            this.friends.push(newfriendName)
+        }
+    }
+
+    console.log(student2.name);
+    student2.sayHello("Chris");
+    // all this nonsense above ^
+    // can dfine multiple properties at definition.Separate with a,
+    // a method without () is sipley "code". In order to RUN the code, you need () 
+    // student4.sayHello;
+
+    // BRACKET NOTATION
+    // if you need a variable property name, you must use bracket notation
+
+    // console.log('')
+    var userProp = prompt("What property would you like", name);
+    // this will not work because userProp is not being traded out for name
+    console.log(student2.userProp)
+        // you must use bracket notation
+        // and now userProp will be traded for a variable
+    console.log(student2[userProp])
+
+    // you can have an array of objects
+
+    // if you reference a property that does not exist you will just get "undefined".  In Python you'd get a reference error.
+</script>

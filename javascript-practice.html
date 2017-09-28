@@ -1,0 +1,36 @@
+<script type="text/javascript">
+    // Make a prompt box that asks the user
+    // for a number between 1 - 10.
+
+    // console.log(typeof(userGuess))
+    // Generate a random number between 1 - 10.
+    var rand = Math.ceil(Math.random() * 10);
+
+    console.log(rand);
+
+    var userGuess = Number(prompt("I'm thinking of a number between 1 and 10..."))
+        // If they match, congrat the user.
+
+    var difference = Math.abs(userGuess - rand);
+    console.log(difference)
+
+    if (isNaN(userNumber)) {
+        alert("You must enter a number!")
+    } else if (userGuess == rand) {
+        alert("You are correct!");
+        // if they are wrong, but within 2 of the number, tell them they were close and what the number was. -
+    } else if (difference <= 2) {
+        console.log("Ooohh so close, the answer we wre looking for was " + randNum);
+        // If they dont, console the user and tell them what it was
+    } else {
+        console.log("Hahahahah you are bad at this!");
+    }
+
+
+
+    //     -
+
+    //     if they are wrong but not within 2, mock them.
+
+    // Lastly, make sure the user entered a number
+</script>

@@ -1,0 +1,72 @@
+<!-- TODO - mess with the DOM  -->
+<!-- ideas - give hero health, decrement it everytime fail roll -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <style type="text/css" media="screen">
+        body {
+            text-align: center;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var health = 10;
+
+        function rollDice() {
+            // console.log("User pressed the roll button.")
+            // get a random number between 1 and 6 for both dice
+            var rand1 = Math.ceil(Math.random() * 6);
+            var rand2 = Math.ceil(Math.random() * 6);
+
+            // The dice images are dN.gif We have 2 random numbers for that N.
+            // Use JS to update the DOM, so that the image files that show, will be the same number as the random number
+            var dice = document.getElementById('dice')
+            console.log(dice);
+            var image1 = dice.children[0];
+            var image2 = dice.children[1];
+            image1.src = `dragon-assets/d${rand1}.gif`
+            image2.src = `dragon-assets/d${rand2}.gif`
+
+            // if (rand1 + rand2 >= 8) {
+            //     document.getElementById('dragon').children[0].src = "image" //insert own image
+            //     document.getElementById('message').innerHTML = "You have defeated the dragon!"
+            // }
+
+            if (health > 0 && (rand1 + rand2 >= 1)) {
+                document.getElementById('health').innerHTML = `health = ${health--}`;
+            } else if (health == 0) {
+                document.getElementById('dragon').children[0].src = "image" //insert own image
+                document.getElementById('message').innerHTML = "You have defeated the dragon!"
+            }
+        }
+    </script>
+
+    <title>Fight the Horrible Dragon</title>
+
+</head>
+
+<body>
+    <div id="game-wrapper">
+        <div id="health"> health = 10 </div>
+        <div id="dragon">
+            <img src="./dragon-assets/dragon.png" alt="">
+        </div>
+        <div id="message">
+            You have encountered the great and terrible green dragon. Roll to fight. You must roll an 8 or higher to defeat it.
+        </div>
+        <div id="dice">
+            <img src="./dragon-assets/d1.gif" alt="">
+            <img src="./dragon-assets/d1.gif" alt="">
+        </div>
+        <div id="roll">
+            <button onclick="rollDice()">Fight!</button>
+        </div>
+    </div>
+</body>
+
+</html>

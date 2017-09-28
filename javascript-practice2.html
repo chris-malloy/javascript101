@@ -1,0 +1,81 @@
+<script type="text/javascript">
+    // 1. Given a number between 0 and 6 representing the days of the week, print "Go to work."
+    // if it 's a work day and "Sleep in." if it'
+    // s a weekend day.You can set up an array
+    // for the days of the week, or
+    // for extra credit, you can check out the JS Date object here).
+
+    // var dayNum = prompt("Enter today's number.")
+
+    // var d = new Date();
+    // var day = d.getDay()
+    // console.log(day)
+
+    // var daysOfWeek = [0, 1, 2, 3, 4, 5, 6];
+
+    // if (day == 0 || day == 6) {
+    //     alert("Sleep in!")
+    // } else {
+    //     alert("Go to work...")
+    // }
+
+    // 2. Given a month number, between 1 and 12, and a year, print the number of days in that month - accounting
+    // for leap years.
+
+    // months = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    // months31 = [0, 2, 4, 6, 7, 9, 11]
+    // months30 = [3, 5, 8, 10]
+    // months28 = [1]
+
+    // userMonth = Number(prompt("What is this month's number?")) - 1
+    // userYear = Number(prompt("What is this year?"))
+    // console.log(months[0])
+    //     //the month is feburary. test if leap year 
+    // if (userMonth == months[1]) {
+    //     if ((userYear % 4 == 0) && (userYear % 100 == 0) && (userYear % 400 == 0)) {
+    //         alert("There are 29 days this month.")
+    //     } else {
+    //         alert("There are 28 days this month.")
+    //     }
+    // } else {
+    //     for (var i = 0; i < months.length; i++) {
+    //         // test for long months
+    //         if (userMonth == months31[i]) {
+    //             alert("There are 31 days this month.")
+    //                 // test for short months
+    //         } else if (userMonth == months30[i]) {
+    //             alert("There are 30 days this month.")
+    //         }
+    //     }
+    // }
+
+
+    // 3. Given the amount of a bill as a number, and a level of service - which can be "good", "fair", or "bad", print the total bill with the tip included.The amount of tip given
+    // for each level of service is defined by:
+    // Extra: Add to "Tip Calculator"...you are also given the number of people to divide the total into.Print the amount
+    // for each person to pay.
+
+    // Convert it to a
+    // function splitAmount that takes the bill amount and the level of service, and the number of people to split the bill between.Return the final amount
+    // for each person.
+
+    var mealTotal = prompt('How much is your bill?')
+    var service = prompt('How would you describe your service? (good,fair,bad)')
+
+    function calcBill(mealTotal, service) {
+        if (service == "good") {
+            tip = mealTotal * .20;
+            billTotal = tip + mealTotal;
+
+        } else if (service == "fair") {
+            tip = mealTotal * .15;
+            billTotal = tip + mealTotal;
+
+        } else if (service == "bad") {
+            tip = mealTotal * .10;
+            billTotal = tip + mealTotal;
+        }
+        return billTotal;
+        alert(billTotal);
+    }
+</script>
