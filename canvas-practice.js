@@ -27,8 +27,8 @@ function Ball(x, y) {
     this.randY = Math.ceil(Math.random() * 15);
     this.drawBall = this.drawBall.bind(this);
     this.updateBallPosition = this.updateBallPosition.bind(this);
+    this.mouseClick = false;
 }
-
 Ball.prototype.radius = 50;
 Ball.prototype.drawBall = function() {
     context.beginPath();
@@ -57,16 +57,22 @@ Ball.prototype.updateBallPosition = function() {
     this.y += this.randY * this.yDirection;
 }
 
+Ball.prototype.changeDirection = function() {
+    this.randX = Math.ceil(Math.random() * 15);
+    this.randY = Math.ceil(Math.random() * 15);
+}
+
+
 // instantiation
 ball = new Ball(100, 100);
 console.log(ball);
 var ballInterval = setInterval(ball.updateBallPosition, 50);
 
-canvas.addEventListener("click", function(event) {
-        console.log(event);
-    })
-    // you could use this ^ to click on ball and change properties of the ball
-    // HOMEWORK - collision detection and change ball behavior
+canvas.addEventListener("click", this.changeDirection());
+
+
+// you could use this ^ to click on ball and change properties of the ball
+// HOMEWORK - collision detection and change ball behavior
 
 
 
